@@ -1,0 +1,6 @@
+{
+  "name": "carousel",
+  "short_name": "carousel",
+  "start_url": "/",
+  "display": "standalone"
+}
