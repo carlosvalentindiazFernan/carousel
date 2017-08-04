@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
 <link rel="import" href="container.html">
-<link rel="import" href="container.html">
+<link rel="import" href="slider.html">
 
 <dom-module id="carousel-app">
   <template>
@@ -9,34 +9,57 @@
       margin-left: 25%;
       margin-top: 30%;
     }
+    slide-app{
+      color: #fff;
+    }
+
     </style>
 
     <container-app title="foca" image="https://www.dondevive.org/wp-content/uploads/2015/07/donde-vive-la-foca.jpg">
-      <span>this a test</span>
-      <span slot="second-text">pumas</span>
+      <h3 slot="primary-text">this a test</h3>
+      <h3 slot="second-text">pumas</h3>
     </container-app>
 
+    <slide-app ></slide-app>
 
 
   </template>
 
   <script>
-    /**
-     * @customElement
-     * @polymer
-     */
-    class CarouselApp extends Polymer.Element {
-      static get is() { return 'carousel-app'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'carousel-app'
-          }
-        };
+  (function Carousel() {
+
+    objElments =[
+      {
+        title: "La foca",
+        primaryText: "text uno",
+        secondText: "Gatom",
+        img: "https://www.dondevive.org/wp-content/uploads/2015/07/donde-vive-la-foca.jpg"
+      },
+      {
+        title: "flash",
+        primaryText: "soy heroe",
+        secondText: "soy rapido",
+        img: "http://nerdist.com/wp-content/uploads/2016/06/Flash-Flashpoint.jpg"
+      },
+      {
+        title: "batman",
+        primaryText: "soy heroe oscuro",
+        secondText: "soy malo",
+        img: "https://s-media-cache-ak0.pinimg.com/736x/aa/f0/ac/aaf0acf8f72942e7e5a51f9a668321e8--batman-comic-art-batman-comics.jpg"
       }
+
+    ];
+
+    console.log(objElments);
+
+    class CarouselApp extends Polymer.Element {
+
+      static get is() { return 'carousel-app'; }
+
     }
 
     window.customElements.define(CarouselApp.is, CarouselApp);
+
+  })();
   </script>
 </dom-module>

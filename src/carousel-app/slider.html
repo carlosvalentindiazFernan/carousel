@@ -1,0 +1,54 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="style.html">
+
+<dom-module id="slide-app">
+  <template>
+    <style>
+    paper-button{
+      @apply --btn-paper-mixin;
+    }
+    #left{
+      background: var(--dark-primary-color);
+      @apply --btn-left-mixin;
+    }
+    #right{
+      background: var(--accent-color);
+      @apply --btn-right-mixin;
+
+    }
+
+    </style>
+
+    <paper-button  id="left" raised class="btn-paper" >left</paper-button>
+    <paper-button id="right" raised class="btn-paper" >right</paper-button>
+
+
+  </template>
+
+  <script>
+    (function Slide () {
+      'use strict';
+
+      class SliderApp extends Polymer.Element {
+
+        static get is() { return 'slide-app'; }
+
+        static get properties(){
+          return {
+            direction :{
+              type: String,
+              notify: true
+            }
+
+          }
+        }
+
+
+      }
+
+      window.customElements.define(SliderApp.is, SliderApp);
+    })();
+
+  </script>
+</dom-module>
